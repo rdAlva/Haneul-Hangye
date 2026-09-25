@@ -1,0 +1,57 @@
+.dashboard {
+  padding: 30px 40px;
+}
+
+.dashboard h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.dashboard-overview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-overview p {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.korean-praise {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.info-cards {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.info-card {
+  background-color: #a8cfe0;
+  border-radius: 12px;
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dashboard-box {
+  background-color: #C6DBF3;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.dashboard-overview p {
+  color: #1a2a3a;
+}
+
+.korean-praise {
+  color: #1a2a3a;
+}
