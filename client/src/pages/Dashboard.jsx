@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../db/supabase";
 import InfoCard from "../components/InfoCard";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/NavBar";
 import SessionItems from "../components/SessionItems";
 import "./Dashboard.css";
 

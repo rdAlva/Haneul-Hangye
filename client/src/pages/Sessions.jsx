@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../db/supabase";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/NavBar";
 import SessionItems from "../components/SessionItems";
 import "./Sessions.css";
 import plus from "../assets/plus.png";
