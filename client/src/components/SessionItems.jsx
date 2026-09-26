@@ -4,6 +4,7 @@ import VocabularyIcon from "../assets/word.png";
 import HangulIcon from "../assets/letter.png";
 import SpeakingIcon from "../assets/speaking.png";
 
+
 function SessionItems({ activityType, duration, date, notes }) {
   const icons = {
     'Listening': ListeningIcon,
@@ -30,7 +31,8 @@ function SessionItems({ activityType, duration, date, notes }) {
       <div className="session-right">
         <span className="session-duration">{duration} min</span>
         <span className="session-date">{date}</span>
-      </div>
+        </div>
+        
     </div>
   );
 }

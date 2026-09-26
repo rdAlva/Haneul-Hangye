@@ -20,20 +20,35 @@
   gap: 12px;
 }
 
+.session-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.session-bin {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
 /* I made this */
-.sessions-header{ 
+.sessions-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
 }
+
 .sessions-header-right {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 8px;
 }
+
 /* I made this but asked ai for help in aligning */
 .sessions-header-right .log-sessions {
   margin: 0;
@@ -43,8 +58,9 @@
   margin-bottom: 0px;
   line-height: 1;
 }
+
 .plus-sign {
-  display:block;
+  display: block;
   width: 40px;
   height: auto;
 }

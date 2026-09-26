@@ -5,6 +5,22 @@
   background-color: #98C4DA;
   padding: 10px 24px;
 }
+.logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.logo h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0px;
+  line-height: 1;
+  color: #000000;
+}
 
 .logo-img {
   height: 50px;
@@ -17,6 +33,10 @@
   display: flex;
   align-items: center;
   gap: 20px;
+}
+.nav-links img:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .nav-links ul {
@@ -43,16 +63,3 @@
   color: #ffffff !important;
 }
 
-.nav-links button {
-  background-color: #ffffff;
-  border: none;
-  border-radius: 6px;
-  padding: 6px 14px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.nav-links button:hover {
-  background-color: #e2e8f0;
-}

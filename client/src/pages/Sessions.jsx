@@ -4,6 +4,7 @@ import Navbar from "../components/NavBar";
 import SessionItems from "../components/SessionItems";
 import "./Sessions.css";
 import plus from "../assets/plus.png";
+import bin from "../assets/bin.png";
 
 function Sessions() {
   const [recentSessions, setRecentSessions] = useState([]);
@@ -60,13 +61,16 @@ function Sessions() {
 
             <div className="session-list">
               {recentSessions.map((session, index) => (
-                <SessionItems
-                  key={index}
-                  activityType={session.activity_type}
-                  duration={session.duration_minutes}
-                  date={session.session_date}
-                  notes={session.notes}
-                />
+                <div className="session-row" key={index}>
+                  <SessionItems
+                    activityType={session.activity_type}
+                    duration={session.duration_minutes}
+                    date={session.session_date}
+                    notes={session.notes}
+                  />
+
+                  <img className="session-bin" src={bin} alt="Bin sign" />
+                </div>
               ))}
             </div>
           </div>
