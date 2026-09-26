@@ -1,7 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom'
+import {useState} from 'react'
 import { supabase } from '../db/supabase'
 import './NavBar.css'
 import logo from '../assets/logo.png'
+import AccModal from './AccModal'
 
 function NavBar() {
   const navigate = useNavigate()
@@ -10,6 +12,7 @@ function NavBar() {
     await supabase.auth.signOut()
     navigate('/')
   }
+  const [ModalOpen, setModalOpen] = useState(false)
 
   return (
     <nav className="navbar">
@@ -24,7 +27,8 @@ function NavBar() {
         <li><Link to="/vocabulary">Vocabulary</Link></li>
       </ul>
 
-      <button onClick={handleLogout}>Logout</button>
+      <img onClick={() => setModalOpen(true)} className="logo-img" src={logo} alt="Haneul Hangye" />
+      {ModalOpen && <AccModal isOpen={ModalOpen} onClose={setModalOpen} onConfirm={handleLogout} />}
       </div>
     </nav>
   )

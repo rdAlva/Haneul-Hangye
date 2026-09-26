@@ -23,10 +23,35 @@ body {
 
 body {
   font-family: "Inter", sans-serif;
-  background: linear-gradient(to top, #273F5A, #4B81A5);
+  background:
+    radial-gradient(circle at 20% 15%,
+      #4B81A5 0%,
+      transparent 45%),
+    radial-gradient(circle at 85% 50%,
+      #4B81A5 0%,
+      transparent 45%),
+    radial-gradient(circle at 15% 85%,
+      #273F5A 0%,
+      transparent 50%),
+    #273F5A;
+  background-size: 150% 150%;
+  animation: blueBackground 10s ease-in-out infinite alternate;
   min-height: 100vh;
   color: var(--text);
 }
+@keyframes blueBackground {
+    0% {
+      background-position: 0% 0%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 100%;
+    }
+  }
 
 #root {
   min-height: 100vh;
