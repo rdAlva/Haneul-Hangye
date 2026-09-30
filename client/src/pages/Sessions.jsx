@@ -2,13 +2,16 @@ import { useEffect, useState } from "react";
 import { supabase } from "../db/supabase";
 import Navbar from "../components/NavBar";
 import SessionItems from "../components/SessionItems";
+import AddSession from "../components/AddSession";
 import "./Sessions.css";
 import plus from "../assets/plus.png";
 import bin from "../assets/bin.png";
 
+
 function Sessions() {
   const [recentSessions, setRecentSessions] = useState([]);
   const [user, setUser] = useState(null);
+  const [isAddSessionOpen, setIsAddSessionOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,7 +53,10 @@ function Sessions() {
       <main className="sessions">
         <div className="sessions-header">
           <h1>Good day, Learner</h1>
-          <div className="sessions-header-right">
+          <div
+            className="sessions-header-right"
+            onClick={() => setIsAddSessionOpen(true)}
+          >
             <img className="plus-sign" src={plus} alt="Plus sign" />
             <h1 className="log-sessions">Log sessions</h1>
           </div>
@@ -75,6 +81,13 @@ function Sessions() {
             </div>
           </div>
         </div>
+        {isAddSessionOpen && (
+          <AddSession
+            isOpen={isAddSessionOpen}
+            onClose={setIsAddSessionOpen}
+            onConfirm={() => {}}
+          />
+        )}
       </main>
     </div>
   );
