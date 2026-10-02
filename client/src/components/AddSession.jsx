@@ -1,11 +1,34 @@
 import "./AddSession.css";
 import React, { useState } from "react";
+import { supabase } from "../db/supabase"
 
-function AddSession({ isOpen, onClose, onConfirm }) {
+function AddSession({ isOpen, onClose, onConfirm, userId }) {
   const [activityType, setActivityType] = useState("");
   const [duration, setDuration] = useState("");
   const [date, setDate] = useState("");
   const [notes, setNotes] = useState("");
+  const handleConfirm = async () => {
+    if (!activityType || !duration || !date) {
+      alert("Please fill in Activity Type, Duration, and Date.");
+      return;
+    }
+
+    const { error } = await supabase.from("study_sessions").insert({
+      user_id: userId,
+      activity_type: activityType,
+      duration_minutes: parseInt(duration, 10),
+      session_date: date,
+      notes: notes || null,
+    });
+
+    if (error) {
+      console.error("Error saving session:", error.message);
+      return;
+    }
+
+    onClose(false);
+    onConfirm();
+  };
 
   return (
     <div className="add-modal-background">
@@ -65,7 +88,7 @@ function AddSession({ isOpen, onClose, onConfirm }) {
         </div>
         <div className="footer">
           <button onClick={() => onClose(false)}>Cancel</button>
-          <button onClick={() => onConfirm()}>Confirm</button>
+          <button onClick={handleConfirm}>Confirm</button>
         </div>
       </div>
     </div>

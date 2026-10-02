@@ -3,6 +3,8 @@ import ListeningIcon from "../assets/headphones.png";
 import VocabularyIcon from "../assets/word.png";
 import HangulIcon from "../assets/letter.png";
 import SpeakingIcon from "../assets/speaking.png";
+import ReadingIcon from "../assets/writing.png";
+import WritingIcon from "../assets/reading.png";
 
 
 function SessionItems({ activityType, duration, date, notes }) {
@@ -11,8 +13,8 @@ function SessionItems({ activityType, duration, date, notes }) {
     'Vocabulary': VocabularyIcon,
     'Hangul Characters': HangulIcon,
     'Speaking': SpeakingIcon,
-    // 'Reading': ReadingIcon,
-    // 'Writing': WritingIcon,
+    'Reading': ReadingIcon,
+    'Writing': WritingIcon,
   };
 
   return (

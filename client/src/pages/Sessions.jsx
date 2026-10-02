@@ -7,45 +7,74 @@ import "./Sessions.css";
 import plus from "../assets/plus.png";
 import bin from "../assets/bin.png";
 
-
 function Sessions() {
   const [recentSessions, setRecentSessions] = useState([]);
   const [user, setUser] = useState(null);
   const [isAddSessionOpen, setIsAddSessionOpen] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const {
-        data: { session },
-      } = await supabase.auth.getSession();
-      const currentUser = session?.user;
-      setUser(currentUser);
+  const fetchData = async () => {
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+    const currentUser = session?.user;
+    setUser(currentUser);
 
-      if (!currentUser) return;
+    if (!currentUser) return;
 
-      const { data: sessions, error: sessionError } = await supabase
-        .from("study_sessions")
-        .select("duration_minutes")
-        .eq("user_id", currentUser.id);
+    const { data: sessions, error: sessionError } = await supabase
+      .from("study_sessions")
+      .select("duration_minutes")
+      .eq("user_id", currentUser.id);
 
-      console.log("Sessions:", sessions);
-      console.log("Session error:", sessionError);
+    console.log("Sessions:", sessions);
+    console.log("Session error:", sessionError);
 
-      const totalMinutes =
-        sessions?.reduce((sum, s) => sum + s.duration_minutes, 0) ?? 0;
+    const totalMinutes =
+      sessions?.reduce((sum, s) => sum + s.duration_minutes, 0) ?? 0;
 
-      const { data: recentData } = await supabase
-        .from("study_sessions")
-        .select("activity_type, duration_minutes, session_date, notes")
-        .eq("user_id", currentUser.id)
-        .order("session_date", { ascending: false })
-        .limit(3);
+    const { data: recentData } = await supabase
+      .from("study_sessions")
+      .select("id, activity_type, duration_minutes, session_date, notes")
+      .eq("user_id", currentUser.id)
+      .order("session_date", { ascending: false });
 
-      setRecentSessions(recentData ?? []);
-    };
+    setRecentSessions(recentData ?? []);
+  };
+  const handleDelete = async (sessionId) => {
+    const { error } = await supabase
+      .from("study_sessions")
+      .delete()
+      .eq("id", sessionId)
+      .eq("user_id", user?.id);
+
+    if (error) {
+      console.error("Error deleting session:", error.message);
+      return;
+    }
 
     fetchData();
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
+  const today = new Date();
+
+  const startOfWeek = new Date(today);
+  const day = today.getDay();
+
+  startOfWeek.setDate(today.getDate() - day);
+  startOfWeek.setHours(0, 0, 0, 0);
+
+  const thisWeekSessions = recentSessions.filter((session) => {
+    const sessionDate = new Date(session.session_date);
+    return sessionDate >= startOfWeek;
+  });
+
+  const earlierSessions = recentSessions.filter((session) => {
+    const sessionDate = new Date(session.session_date);
+    return sessionDate < startOfWeek;
+  });
 
   return (
     <div>
@@ -66,18 +95,53 @@ function Sessions() {
             <h2>Recent Sessions</h2>
 
             <div className="session-list">
-              {recentSessions.map((session, index) => (
-                <div className="session-row" key={index}>
-                  <SessionItems
-                    activityType={session.activity_type}
-                    duration={session.duration_minutes}
-                    date={session.session_date}
-                    notes={session.notes}
-                  />
+              {thisWeekSessions.length > 0 && (
+                <>
+                  <h3 className="session-group-title">This week</h3>
 
-                  <img className="session-bin" src={bin} alt="Bin sign" />
-                </div>
-              ))}
+                  {thisWeekSessions.map((session) => (
+                    <div className="session-row" key={session.id}>
+                      <SessionItems
+                        activityType={session.activity_type}
+                        duration={session.duration_minutes}
+                        date={session.session_date}
+                        notes={session.notes}
+                      />
+
+                      <img
+                        className="session-bin"
+                        src={bin}
+                        alt="Bin sign"
+                        onClick={() => handleDelete(session.id)}
+                      />
+                    </div>
+                  ))}
+                </>
+              )}
+
+              {earlierSessions.length > 0 && (
+                <>
+                  <h3 className="session-group-title">Earlier</h3>
+
+                  {earlierSessions.map((session) => (
+                    <div className="session-row" key={session.id}>
+                      <SessionItems
+                        activityType={session.activity_type}
+                        duration={session.duration_minutes}
+                        date={session.session_date}
+                        notes={session.notes}
+                      />
+
+                      <img
+                        className="session-bin"
+                        src={bin}
+                        alt="Bin sign"
+                        onClick={() => handleDelete(session.id)}
+                      />
+                    </div>
+                  ))}
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -85,7 +149,8 @@ function Sessions() {
           <AddSession
             isOpen={isAddSessionOpen}
             onClose={setIsAddSessionOpen}
-            onConfirm={() => {}}
+            userId={user?.id}
+            onConfirm={() => fetchData()}
           />
         )}
       </main>
