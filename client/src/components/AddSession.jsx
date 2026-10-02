@@ -19,6 +19,7 @@ function AddSession({ isOpen, onClose, onConfirm }) {
         <div className="body">
           <div className="activity-type">
             <label>Activity Type</label>
+            <br />
             <select
               value={activityType}
               onChange={(e) => setActivityType(e.target.value)}
@@ -35,6 +36,7 @@ function AddSession({ isOpen, onClose, onConfirm }) {
           <div className="duration_Date">
             <div className="duration">
               <label>Duration</label>
+              <br />
               <input
                 type="number"
                 value={duration}
@@ -43,6 +45,7 @@ function AddSession({ isOpen, onClose, onConfirm }) {
             </div>
             <div className="date">
               <label>Date</label>
+              <br />
               <input
                 type="date"
                 value={date}
@@ -52,6 +55,7 @@ function AddSession({ isOpen, onClose, onConfirm }) {
           </div>
           <div className="notes">
             <label>Notes</label>
+            <br />
             <input
               type="text"
               value={notes}
