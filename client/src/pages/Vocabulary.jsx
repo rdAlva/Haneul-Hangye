@@ -6,10 +6,12 @@ import plus from "../assets/plus.png";
 import HangulCharacter from "../components/HangulCharacter";
 import VocabCategory from "../components/VocabCateg";
 import VocabularyTable from "../components/VocabTable";
+import AddVocab from "../components/AddVocab";
 
 function Vocabulary() {
   const [user, setUser] = useState(null);
   const [words, setWords] = useState([]);
+  const [isAddVocabOpen, setIsAddVocabOpen] = useState(false);
 
   const fetchVocab = async () => {
     if (!user) return;
@@ -102,47 +104,47 @@ function Vocabulary() {
 
   const vowels = [
     {
-      label: "ㅏ",  
-      value: "a"
+      label: "ㅏ",
+      value: "a",
     },
     {
       label: "ㅑ",
-      value: "ya"
+      value: "ya",
     },
     {
       label: "ㅓ",
-      value: "eo"
+      value: "eo",
     },
     {
       label: "ㅕ",
-      value: "yeo"
+      value: "yeo",
     },
     {
       label: "ㅗ",
-      value: "o"
+      value: "o",
     },
     {
       label: "ㅛ",
-      value: "yo"
+      value: "yo",
     },
     {
       label: "ㅜ",
-      value: "u"
+      value: "u",
     },
     {
       label: "ㅠ",
-      value: "yu"
+      value: "yu",
     },
     {
       label: "ㅡ",
-      value: "eu"
+      value: "eu",
     },
     {
       label: "ㅣ",
-      value: "i"
-    }
+      value: "i",
+    },
   ];
-  
+
   const categories = [
     {
       label: "All",
@@ -152,8 +154,8 @@ function Vocabulary() {
     },
     {
       label: "Mastered",
-    }
-    ,{
+    },
+    {
       label: "Greetings",
     },
     {
@@ -161,7 +163,7 @@ function Vocabulary() {
     },
     {
       label: "Foods",
-    }
+    },
   ];
 
   return (
@@ -172,7 +174,7 @@ function Vocabulary() {
           <h1>Vocabulary</h1>
           <div
             className="vocabulary-header-right"
-            // onClick={() => setIsAddSessionOpen(true)}
+            onClick={() => setIsAddVocabOpen(true)}
           >
             <img className="plus-sign" src={plus} alt="Plus sign" />
             <h1 className="add-word">Add Word</h1>
@@ -189,7 +191,7 @@ function Vocabulary() {
               />
             ))}
           </div>
-          <label>Hangul - Vowels (모음)  </label>
+          <label>Hangul - Vowels (모음) </label>
           <div className="vowels-box">
             {vowels.map((vowel, index) => (
               <HangulCharacter
@@ -202,24 +204,21 @@ function Vocabulary() {
           <label>Your words</label>
           <div className="category-box">
             {categories.map((category, index) => (
-              <VocabCategory
-                key={index}
-                label={category.label}
-              />
+              <VocabCategory key={index} label={category.label} />
             ))}
           </div>
           <div className="vocab-table-box">
             <VocabularyTable words={words} />
           </div>
         </div>
-        {/* {isAddSessionOpen && (
-          <AddSession
-            isOpen={isAddSessionOpen}
-            onClose={setIsAddSessionOpen}
+        {isAddVocabOpen && (
+          <AddVocab
+            isOpen={isAddVocabOpen}
+            onClose={setIsAddVocabOpen}
             userId={user?.id}
-            onConfirm={() => fetchData()}
+            onConfirm={fetchVocab}
           />
-        )} */}
+        )}
       </main>
     </div>
   );

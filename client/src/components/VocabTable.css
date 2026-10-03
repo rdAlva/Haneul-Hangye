@@ -12,6 +12,7 @@
 .vocab-table th {
   padding: 12px 10px;
   text-align: left;
+  border-bottom: 1px solid #2d3a4a;
 }
 
 .vocab-table td {
