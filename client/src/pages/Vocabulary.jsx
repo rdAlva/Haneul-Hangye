@@ -4,9 +4,28 @@ import Navbar from "../components/NavBar";
 import "./Vocabulary.css";
 import plus from "../assets/plus.png";
 import HangulCharacter from "../components/HangulCharacter";
+import VocabCategory from "../components/VocabCateg";
+import VocabularyTable from "../components/VocabTable";
 
 function Vocabulary() {
   const [user, setUser] = useState(null);
+  const [words, setWords] = useState([]);
+
+  const fetchVocab = async () => {
+    if (!user) return;
+
+    const { data, error } = await supabase
+      .from("vocabulary_words")
+      .select("*")
+      .eq("user_id", user?.id);
+
+    if (error) {
+      console.error("Error fetching vocabulary", error.message);
+    } else {
+      setWords(data ?? []);
+    }
+  };
+
   useEffect(() => {
     const fetchUser = async () => {
       const {
@@ -14,8 +33,13 @@ function Vocabulary() {
       } = await supabase.auth.getUser();
       setUser(user);
     };
+
     fetchUser();
   }, []);
+
+  useEffect(() => {
+    fetchVocab();
+  }, [user]);
 
   const consonants = [
     {
@@ -118,6 +142,27 @@ function Vocabulary() {
       value: "i"
     }
   ];
+  
+  const categories = [
+    {
+      label: "All",
+    },
+    {
+      label: "Learning",
+    },
+    {
+      label: "Mastered",
+    }
+    ,{
+      label: "Greetings",
+    },
+    {
+      label: "Numbers",
+    },
+    {
+      label: "Foods",
+    }
+  ];
 
   return (
     <div>
@@ -153,6 +198,18 @@ function Vocabulary() {
                 value={vowel.value}
               />
             ))}
+          </div>
+          <label>Your words</label>
+          <div className="category-box">
+            {categories.map((category, index) => (
+              <VocabCategory
+                key={index}
+                label={category.label}
+              />
+            ))}
+          </div>
+          <div className="vocab-table-box">
+            <VocabularyTable words={words} />
           </div>
         </div>
         {/* {isAddSessionOpen && (
