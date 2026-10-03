@@ -5,6 +5,7 @@ import Register from "./pages/Register";
 import ForgotPassword from "./pages/ForgotPassword";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Sessions from "./pages/Sessions";
+import Vocabulary from "./pages/Vocabulary";
 
 function App() {
   return (
@@ -14,13 +15,27 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
 
-        <Route path="/sessions" element={<Sessions />} />
-
         <Route
           path="/dashboard"
           element={
             <ProtectedRoute>
               <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/sessions"
+          element={
+            <ProtectedRoute>
+              <Sessions />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/vocabulary"
+          element={
+            <ProtectedRoute>
+              <Vocabulary />
             </ProtectedRoute>
           }
         />

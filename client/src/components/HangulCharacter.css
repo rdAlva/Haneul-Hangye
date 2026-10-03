@@ -1,0 +1,23 @@
+.hangul-character {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #2d3a4a;
+  width: 100px;
+  height: auto;
+  margin-top: 10px;
+}
+
+.character-label {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.character-value {
+  font-size: 1rem;
+  color: #000000;
+  font-weight: 500;
+}
