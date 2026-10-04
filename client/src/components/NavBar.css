@@ -4,6 +4,7 @@
   align-items: center;
   background-color: #98C4DA;
   padding: 10px 24px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 .logo {
   display: flex;

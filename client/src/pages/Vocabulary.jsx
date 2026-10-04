@@ -8,11 +8,11 @@ import VocabCategory from "../components/VocabCateg";
 import VocabularyTable from "../components/VocabTable";
 import AddVocab from "../components/AddVocab";
 
-
 function Vocabulary() {
   const [user, setUser] = useState(null);
   const [words, setWords] = useState([]);
   const [isAddVocabOpen, setIsAddVocabOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const fetchVocab = async () => {
     if (!user) return;
@@ -29,19 +29,19 @@ function Vocabulary() {
     }
   };
   const handleDelete = async (wordId) => {
-  const { error } = await supabase
-    .from("vocabulary_words")
-    .delete()
-    .eq("id", wordId)
-    .eq("user_id", user?.id);
+    const { error } = await supabase
+      .from("vocabulary_words")
+      .delete()
+      .eq("id", wordId)
+      .eq("user_id", user?.id);
 
-  if (error) {
-    console.error("Error deleting vocabulary:", error.message);
-    return;
-  }
+    if (error) {
+      console.error("Error deleting vocabulary:", error.message);
+      return;
+    }
 
-  fetchVocab();
-};
+    fetchVocab();
+  };
   useEffect(() => {
     const fetchUser = async () => {
       const {
@@ -164,21 +164,31 @@ function Vocabulary() {
       label: "All",
     },
     {
-      label: "Learning",
+      label: "Nouns",
     },
     {
-      label: "Mastered",
+      label: "Verbs",
     },
     {
-      label: "Greetings",
+      label: "Adjectives",
+    },
+    {
+      label: "Adverbs",
+    },
+    {
+      label: "Phrases",
     },
     {
       label: "Numbers",
     },
     {
-      label: "Foods",
+      label: "Other",
     },
   ];
+  const filteredWords =
+    selectedCategory === "All"
+      ? words
+      : words.filter((word) => word.category === selectedCategory);
 
   return (
     <div>
@@ -218,11 +228,15 @@ function Vocabulary() {
           <label>Your words</label>
           <div className="category-box">
             {categories.map((category, index) => (
-              <VocabCategory key={index} label={category.label} />
+              <VocabCategory
+                key={index}
+                label={category.label}
+                onClick={() => setSelectedCategory(category.label)}
+              />
             ))}
           </div>
           <div className="vocab-table-box">
-            <VocabularyTable words={words} onDelete={handleDelete} />
+            <VocabularyTable words={filteredWords} onDelete={handleDelete} />
           </div>
         </div>
         {isAddVocabOpen && (

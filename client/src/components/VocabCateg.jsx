@@ -1,7 +1,7 @@
 import './VocabCateg.css'
-function VocabCategory({label}) {
+function VocabCategory({label, onClick}) {
   return (
-    <div className="vocab-category">
+    <div className="vocab-category" onClick={onClick}>
       <span className="vocab-category-label">{label}</span>
     </div>
   )
