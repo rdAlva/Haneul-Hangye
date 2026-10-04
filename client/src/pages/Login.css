@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+}
+
+.login-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.login-card {
+  width: 900px;
+  height: 670px;
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #FFFFFF;
+  box-shadow:
+    0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+.login-info {
+  width: 50%;
+  background: #273F5A;
+  color: #FFFFFF;
+  padding: 28px 25px 20px;
+  position: relative;
+}
+
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.brand-logo {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFFFFF;
+  border-radius: 50%;
+}
+
+.logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.brand h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+
+.login-info h2 {
+  margin: 0 0 14px;
+  font-size: 1.5rem;
+  line-height: 1.15;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.korean-text {
+  margin: 0 0 13px;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.info-text {
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+.language-icons {
+  position: absolute;
+  right: 25px;
+  bottom: 18px;
+}
+
+.language-icon {
+  width: 80px;
+  height: auto;
+  display: block;
+}
+
+.login-form {
+  width: 50%;
+  background: #C6DBF3;
+  padding: 34px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form h1 {
+  margin: 0;
+  color: #273F5A;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.login-subtitle {
+  margin: 8px auto 25px;
+  max-width: 230px;
+  color: #273F5A;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.error {
+  margin: 0 0 12px;
+  padding: 7px;
+  background: #FFFFFF;
+  color: #000000;
+  border-radius: 4px;
+  font-size: 9px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 13px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #273F5A;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+  background: #FFFFFF;
+  color: #000000;
+  font-size: 1rem;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #4B81A5;
+}
+
+.form-group input::placeholder {
+  color: #999999;
+}
+
+.forgot-password {
+  display: block;
+  margin-top: 4px;
+  color: #273F5A;
+  font-size: 1rem;
+  text-align: right;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.login-button {
+  width: 100%;
+  height: 40px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 15px;
+  background: #4B81A5;
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.login-button:hover {
+  opacity: 0.9;
+}
+
+.login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.signup-text {
+  margin-top: 20px;
+  color: #273F5A;
+  font-size: 1rem;
+  text-align: center;
+
+}
+
+.signup-text a {
+  color: #273F5A;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .login-card {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .login-info,
+  .login-form {
+    width: 100%;
+  }
+
+  .login-info {
+    min-height: 300px;
+  }
+
+  .login-form {
+    min-height: 350px;
+  }
+}

@@ -12,8 +12,11 @@
 .vocab-table th {
   padding: 12px 10px;
   text-align: left;
+}
+.vocab-table th {
   border-bottom: 1px solid #2d3a4a;
 }
+
 
 .vocab-table td {
   padding: 12px 10px;
@@ -31,7 +34,17 @@
   color: #000000;
   font-weight: 500;
 }
-
+.vocab-bin {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+}
+.vocab-table th:nth-child(1),
+.vocab-table td:nth-child(1) {
+  width: 12%;
+}
 
 .vocab-table th:nth-child(2),
 .vocab-table td:nth-child(2) {
@@ -51,4 +64,9 @@
 .vocab-table th:nth-child(5),
 .vocab-table td:nth-child(5) {
   width: 20%;
+}
+
+.vocab-table th:nth-child(6),
+.vocab-table td:nth-child(6) {
+  width: 8%;
 }

@@ -8,6 +8,7 @@ import VocabCategory from "../components/VocabCateg";
 import VocabularyTable from "../components/VocabTable";
 import AddVocab from "../components/AddVocab";
 
+
 function Vocabulary() {
   const [user, setUser] = useState(null);
   const [words, setWords] = useState([]);
@@ -27,7 +28,20 @@ function Vocabulary() {
       setWords(data ?? []);
     }
   };
+  const handleDelete = async (wordId) => {
+  const { error } = await supabase
+    .from("vocabulary_words")
+    .delete()
+    .eq("id", wordId)
+    .eq("user_id", user?.id);
 
+  if (error) {
+    console.error("Error deleting vocabulary:", error.message);
+    return;
+  }
+
+  fetchVocab();
+};
   useEffect(() => {
     const fetchUser = async () => {
       const {
@@ -208,7 +222,7 @@ function Vocabulary() {
             ))}
           </div>
           <div className="vocab-table-box">
-            <VocabularyTable words={words} />
+            <VocabularyTable words={words} onDelete={handleDelete} />
           </div>
         </div>
         {isAddVocabOpen && (
