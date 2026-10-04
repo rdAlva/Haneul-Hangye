@@ -199,6 +199,12 @@
 }
 
 @media (max-width: 700px) {
+  .register-page {
+    min-height: 100vh;
+    padding: 15px;
+    align-items: flex-start;
+  }
+
   .register-card {
     width: 100%;
     max-width: 420px;
@@ -212,10 +218,125 @@
   }
 
   .register-info {
-    min-height: 300px;
+    min-height: 260px;
+    padding: 22px 20px 25px;
+  }
+
+  .brand {
+    margin-bottom: 15px;
+  }
+
+  .brand-logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .logo-img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .brand h2 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .register-info h1 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .korean-greeting {
+    font-size: 1.1rem;
+    margin-bottom: 9px;
+  }
+
+  .register-info > p:not(.korean-greeting) {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .language-icons {
+    right: 18px;
+    bottom: 15px;
+  }
+
+  .language-icon {
+    width: 60px;
   }
 
   .register-form {
-    min-height: 350px;
+    min-height: auto;
+    padding: 28px 22px 25px;
+  }
+
+  .register-form h1 {
+    font-size: 1.6rem;
+  }
+
+  .register-form > p {
+    margin: 8px auto 20px;
+    max-width: 280px;
+    font-size: 1rem;
+  }
+
+  .register-form label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .register-form input {
+    height: 38px;
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .register-form button {
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .login-link {
+    margin-top: 15px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .login-link a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .register-page {
+    padding: 10px;
+  }
+
+  .register-info {
+    min-height: 245px;
+    padding: 20px 17px 22px;
+  }
+
+  .register-form {
+    padding: 25px 18px 22px;
+  }
+
+  .brand h2 {
+    font-size: 1.35rem;
+  }
+
+  .register-info h1 {
+    font-size: 1.2rem;
+  }
+
+  .register-info > p:not(.korean-greeting) {
+    font-size: 0.9rem;
+  }
+
+  .register-form h1 {
+    font-size: 1.45rem;
+  }
+
+  .register-form > p {
+    font-size: 0.9rem;
   }
 }

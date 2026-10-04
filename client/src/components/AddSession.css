@@ -115,3 +115,74 @@ input[type="text"], input[type="number"], input[type="date"], select {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+@media (max-width: 700px) {
+  .add-modal-container {
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .add-modal-container .title p {
+    font-size: 1.1em;
+  }
+
+  .add-modal-container .body {
+    font-size: 1rem;
+  }
+
+  .add-modal-container .body p,
+  .add-modal-container .body .activity-type,
+  .add-modal-container .body .duration_Date,
+  .add-modal-container .body .notes {
+    font-size: 0.95rem;
+  }
+
+  .add-modal-container .body .duration_Date {
+    flex-direction: column;
+  }
+
+  .close-btn button {
+    font-size: 18px;
+  }
+
+  .add-modal-container .footer button {
+    width: 90px;
+    height: 38px;
+    margin: 6px;
+    padding: 8px;
+    font-size: 1rem;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  select {
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .add-modal-container {
+    width: 92%;
+    padding: 18px;
+  }
+
+  .add-modal-container .title p {
+    font-size: 1rem;
+  }
+
+  .add-modal-container .body p,
+  .add-modal-container .body .activity-type,
+  .add-modal-container .body .duration_Date,
+  .add-modal-container .body .notes {
+    font-size: 0.9rem;
+  }
+
+  .add-modal-container .footer button {
+    width: 85px;
+    font-size: 0.9rem;
+  }
+}

@@ -221,6 +221,12 @@
 }
 
 @media (max-width: 700px) {
+  .login-page {
+    min-height: 100vh;
+    padding: 15px;
+    align-items: flex-start;
+  }
+
   .login-card {
     width: 100%;
     max-width: 420px;
@@ -234,10 +240,132 @@
   }
 
   .login-info {
-    min-height: 300px;
+    min-height: 260px;
+    padding: 22px 20px 25px;
+  }
+
+  .brand {
+    margin-bottom: 15px;
+  }
+
+  .brand-logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .logo-img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .brand h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .login-info h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .korean-text {
+    font-size: 1.1rem;
+    margin-bottom: 9px;
+  }
+
+  .info-text {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .language-icons {
+    right: 18px;
+    bottom: 15px;
+  }
+
+  .language-icon {
+    width: 60px;
   }
 
   .login-form {
-    min-height: 350px;
+    min-height: auto;
+    padding: 28px 22px 25px;
+  }
+
+  .login-form h1 {
+    font-size: 1.6rem;
+  }
+
+  .login-subtitle {
+    margin: 8px auto 20px;
+    max-width: 280px;
+    font-size: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 12px;
+  }
+
+  .form-group label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .form-group input {
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  .forgot-password {
+    font-size: 0.9rem;
+  }
+
+  .login-button {
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .signup-text {
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+
+  .signup-text a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .login-page {
+    padding: 10px;
+  }
+
+  .login-info {
+    min-height: 245px;
+    padding: 20px 17px 22px;
+  }
+
+  .login-form {
+    padding: 25px 18px 22px;
+  }
+
+  .brand h1 {
+    font-size: 1.35rem;
+  }
+
+  .login-info h2 {
+    font-size: 1.2rem;
+  }
+
+  .info-text {
+    font-size: 0.9rem;
+  }
+
+  .login-form h1 {
+    font-size: 1.45rem;
+  }
+
+  .login-subtitle {
+    font-size: 0.9rem;
   }
 }

@@ -22,3 +22,58 @@
   color: #000000;
   font-weight: 500;
 }
+
+.hangul-character {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #2d3a4a;
+  width: 100px;
+  height: auto;
+  margin-top: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.character-label {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.character-value {
+  font-size: 1rem;
+  color: #000000;
+  font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .hangul-character {
+    width: 60px;
+    padding: 4px;
+    margin-top: 6px;
+  }
+
+  .character-label {
+    font-size: 1.3rem;
+  }
+
+  .character-value {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .hangul-character {
+    width: 52px;
+  }
+
+  .character-label {
+    font-size: 1.1rem;
+  }
+
+  .character-value {
+    font-size: 0.7rem;
+  }
+}

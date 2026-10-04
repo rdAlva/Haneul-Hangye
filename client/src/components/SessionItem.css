@@ -68,3 +68,82 @@
   color: var(--text-muted);
   margin-top: 2px;
 }
+
+@media (max-width: 700px) {
+  .recent-sessions {
+    padding: 18px;
+  }
+
+  .recent-sessions h2 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+
+  .session-item {
+    padding: 12px 0;
+  }
+
+  .session-left {
+    gap: 10px;
+  }
+
+  .session-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .session-type {
+    font-size: 1.05rem;
+  }
+
+  .session-notes {
+    font-size: 0.8rem;
+  }
+
+  .session-right {
+    margin-right: 8px;
+  }
+
+  .session-duration {
+    font-size: 1.05rem;
+  }
+
+  .session-date {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .recent-sessions {
+    padding: 14px;
+  }
+
+  .session-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .session-left {
+    gap: 8px;
+  }
+
+  .session-type {
+    font-size: 0.95rem;
+  }
+
+  .session-notes {
+    font-size: 0.75rem;
+  }
+
+  .session-right {
+    margin-right: 4px;
+  }
+
+  .session-duration {
+    font-size: 0.95rem;
+  }
+
+  .session-date {
+    font-size: 0.75rem;
+  }
+}

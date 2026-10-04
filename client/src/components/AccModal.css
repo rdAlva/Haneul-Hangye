@@ -83,3 +83,61 @@
   cursor: pointer;
   transition: background-color 0.5s;
 }
+
+@media (max-width: 700px) {
+  .acc-modal-container {
+    width: 90%;
+    max-width: 300px;
+    height: auto;
+    min-height: 280px;
+    padding: 20px;
+  }
+
+  .acc-modal-container .title {
+    margin-top: 5%;
+  }
+
+  .acc-modal-container .title p {
+    font-size: 1.1em;
+  }
+
+  .acc-modal-container .body {
+    font-size: 1rem;
+  }
+
+  .acc-modal-container .body p {
+    font-size: 0.95rem;
+  }
+
+  .close-btn button {
+    font-size: 18px;
+  }
+
+  .acc-modal-container .footer button {
+    width: 90px;
+    height: 38px;
+    margin: 6px;
+    padding: 8px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .acc-modal-container {
+    width: 92%;
+    padding: 18px;
+  }
+
+  .acc-modal-container .title p {
+    font-size: 1rem;
+  }
+
+  .acc-modal-container .body p {
+    font-size: 0.9rem;
+  }
+
+  .acc-modal-container .footer button {
+    width: 85px;
+    font-size: 0.9rem;
+  }
+}

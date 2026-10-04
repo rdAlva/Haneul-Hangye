@@ -93,3 +93,185 @@
   width: 40px;
   height: auto;
 }
+.vocabulary {
+  padding: 30px 40px;
+}
+
+.vocabulary h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.vocab-box {
+  background-color: #C6DBF3;
+  border-radius: 16px;
+  padding: 24px;
+  gap: 12px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.consonants-box,
+.vowels-box,
+.category-box {
+  display: flex;
+  flex-direction: row;
+  border-radius: 16px;
+  padding: 0;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.vocab-box label {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #000000;
+}
+
+.words-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.words-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vocabulary-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.vocabulary-header-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.vocabulary-header-right .add-word {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.vocabulary-header-right:hover .plus-sign,
+.vocabulary-header-right:hover .add-word {
+  cursor: pointer;
+}
+
+.plus-sign {
+  display: block;
+  width: 40px;
+  height: auto;
+}
+
+@media (max-width: 700px) {
+  .vocabulary {
+    padding: 20px;
+    min-width: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .vocabulary h1 {
+    font-size: 1.6rem;
+  }
+
+  .vocabulary-header {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 14px;
+  }
+
+  .vocabulary-header-right {
+    gap: 6px;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .vocabulary-header-right .add-word {
+    font-size: 1.1rem;
+    white-space: nowrap;
+  }
+
+  .plus-sign {
+    width: 30px;
+    flex-shrink: 0;
+  }
+
+  .vocab-box {
+    width: 100%;
+    min-width: 0;
+    padding: 20px;
+    border-radius: 12px;
+    overflow-x: auto;
+  }
+
+  .vocab-box label {
+    font-size: 1.4rem;
+  }
+
+  .consonants-box,
+  .vowels-box,
+  .category-box {
+    width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .words-list {
+    gap: 10px;
+  }
+
+  .words-row {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .vocabulary {
+    padding: 15px;
+  }
+
+  .vocabulary h1 {
+    font-size: 1.45rem;
+  }
+
+  .vocabulary-header-right {
+    gap: 4px;
+  }
+
+  .vocabulary-header-right .add-word {
+    font-size: 0.95rem;
+  }
+
+  .plus-sign {
+    width: 25px;
+  }
+
+  .vocab-box {
+    padding: 16px;
+  }
+
+  .vocab-box label {
+    font-size: 1.2rem;
+  }
+
+  .consonants-box,
+  .vowels-box,
+  .category-box {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+}

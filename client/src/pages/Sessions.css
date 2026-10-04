@@ -81,3 +81,86 @@
   width: 40px;
   height: auto;
 }
+@media (max-width: 700px) {
+  .sessions {
+    padding: 20px;
+  }
+
+  .sessions h1 {
+    font-size: 1.6rem;
+  }
+
+  .sessions-header {
+    margin-bottom: 14px;
+  }
+
+  .sessions-header-right {
+    gap: 6px;
+  }
+
+  .sessions-header-right .log-sessions {
+    font-size: 1.1rem;
+  }
+
+  .plus-sign {
+    width: 30px;
+  }
+
+  .sessions-box {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .session-list {
+    gap: 10px;
+  }
+
+  .session-row {
+    gap: 8px;
+  }
+
+  .session-bin {
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+  }
+
+  .session-group-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .sessions {
+    padding: 15px;
+  }
+
+  .sessions h1 {
+    font-size: 1.45rem;
+  }
+
+  .sessions-header-right {
+    gap: 4px;
+  }
+
+  .sessions-header-right .log-sessions {
+    font-size: 0.95rem;
+  }
+
+  .plus-sign {
+    width: 25px;
+  }
+
+  .sessions-box {
+    padding: 16px;
+  }
+
+  .session-bin {
+    width: 22px;
+    height: 22px;
+  }
+
+  .session-group-title {
+    font-size: 15px;
+  }
+}
