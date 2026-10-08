@@ -17,7 +17,7 @@ body {
   --surface: #1e3448;
   --text: #ffffff;
   --inside-text: #000000;
-  --text-muted: #67717c;
+  --text-muted: #1a1d1f;
   --accent: #5ba3c9;
 }
 
@@ -39,6 +39,7 @@ body {
   min-height: 100vh;
   color: var(--text);
 }
+
 @keyframes blueBackground {
     0% {
       background-position: 0% 0%;

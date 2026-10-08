@@ -65,7 +65,8 @@ function Dashboard() {
       <main className="dashboard">
         <h1>Good day, Learner</h1>
         <div className="dashboard-box">
-          <div className="dashboard-overview">
+          <div className="dashboard-content">
+              <div className="dashboard-overview">
             <p>Here's your study overview for this week.</p>
             <span className="korean-praise">잘했어요!</span>
           </div>
@@ -89,6 +90,8 @@ function Dashboard() {
               />
             ))}
           </div>
+          </div>
+          
         </div>
       </main>
     </div>
