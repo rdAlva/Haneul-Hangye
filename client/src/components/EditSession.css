@@ -1,0 +1,188 @@
+
+.add-modal-background{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.add-modal-container{
+  background-color: #C6DBF3;
+  border-radius: 12px;
+  padding: 24px;
+  width: 400px;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.add-modal-container .title{
+  display: inline-block;
+  text-align: left;
+}
+.add-modal-container .title p{
+  display: inline-block;
+  text-align: left;
+  color: #000000;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.close-btn{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn button{
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.add-modal-container .body{
+  flex: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  text-align: left;
+  font-size: 1.2em;
+}
+
+.add-modal-container .body p{
+  display: inline-block;
+  text-align: left;
+  color: #000000;
+  font-size: 1em;
+}
+.add-modal-container .body .activity-type{
+  display: inline-block;
+  text-align: left;
+  color: #000000;
+  font-size: 1em;
+}
+.add-modal-container .body .duration_Date{
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  color: #000000;
+  font-size: 1em;
+  justify-content: space-between;
+}
+.add-modal-container .body .notes{
+  display: inline-block;
+  flex-direction: row;
+  text-align: left;
+  color: #000000;
+  font-size: 1em;
+}
+
+.add-modal-container .footer{
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-modal-container .footer button{
+  width: 110px;
+  height: 40px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #273F5A;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+.add-modal-container .footer button:hover{
+  background-color: #1A2B3C;
+}
+input[type="text"], input[type="number"], input[type="date"], select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+@media (max-width: 700px) {
+  .add-modal-container {
+    width: 90%;
+    max-width: 400px;
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .add-modal-container .title p {
+    font-size: 1.1em;
+  }
+
+  .add-modal-container .body {
+    font-size: 1rem;
+  }
+
+  .add-modal-container .body p,
+  .add-modal-container .body .activity-type,
+  .add-modal-container .body .duration_Date,
+  .add-modal-container .body .notes {
+    font-size: 0.95rem;
+  }
+
+  .add-modal-container .body .duration_Date {
+    flex-direction: column;
+  }
+
+  .close-btn button {
+    font-size: 18px;
+  }
+
+  .add-modal-container .footer button {
+    width: 90px;
+    height: 38px;
+    margin: 6px;
+    padding: 8px;
+    font-size: 1rem;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  select {
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .add-modal-container {
+    width: 92%;
+    padding: 18px;
+  }
+
+  .add-modal-container .title p {
+    font-size: 1rem;
+  }
+
+  .add-modal-container .body p,
+  .add-modal-container .body .activity-type,
+  .add-modal-container .body .duration_Date,
+  .add-modal-container .body .notes {
+    font-size: 0.9rem;
+  }
+
+  .add-modal-container .footer button {
+    width: 85px;
+    font-size: 0.9rem;
+  }
+}

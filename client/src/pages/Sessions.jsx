@@ -3,14 +3,18 @@ import { supabase } from "../db/supabase";
 import Navbar from "../components/NavBar";
 import SessionItems from "../components/SessionItems";
 import AddSession from "../components/AddSession";
+import EditSession from "../components/EditSession";
 import "./Sessions.css";
 import plus from "../assets/plus.png";
 import bin from "../assets/bin.png";
+import edit from "../assets/edit.png";
 
 function Sessions() {
   const [recentSessions, setRecentSessions] = useState([]);
   const [user, setUser] = useState(null);
   const [isAddSessionOpen, setIsAddSessionOpen] = useState(false);
+  const [isEditSessionOpen, setIsEditSessionOpen] = useState(false);
+  const [editingSession, setEditingSession] = useState(null);
 
   const fetchData = async () => {
     const {
@@ -107,7 +111,15 @@ function Sessions() {
                         date={session.session_date}
                         notes={session.notes}
                       />
-
+                      <img
+                        className="session-edit"
+                        src={edit}
+                        alt="edit sign"
+                        onClick={() => {
+                          setIsEditSessionOpen(true);
+                          setEditingSession(session);
+                        }}
+                      />
                       <img
                         className="session-bin"
                         src={bin}
@@ -131,6 +143,15 @@ function Sessions() {
                         date={session.session_date}
                         notes={session.notes}
                       />
+                      <img
+                        className="session-edit"
+                        src={edit}
+                        alt="edit sign"
+                        onClick={() => {
+                          setIsEditSessionOpen(true);
+                          setEditingSession(session);
+                        }}
+                      />
 
                       <img
                         className="session-bin"
@@ -151,6 +172,15 @@ function Sessions() {
             onClose={setIsAddSessionOpen}
             userId={user?.id}
             onConfirm={() => fetchData()}
+          />
+        )}
+        {isEditSessionOpen && (
+          <EditSession
+            isOpen={isEditSessionOpen}
+            onClose={setIsEditSessionOpen}
+            onConfirm={() => fetchData()}
+            userId={user?.id}
+            session={editingSession}
           />
         )}
       </main>

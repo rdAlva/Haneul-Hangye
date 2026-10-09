@@ -7,12 +7,15 @@ import HangulCharacter from "../components/HangulCharacter";
 import VocabCategory from "../components/VocabCateg";
 import VocabularyTable from "../components/VocabTable";
 import AddVocab from "../components/AddVocab";
+import EditVocab from "../components/EditVocab";
 
 function Vocabulary() {
   const [user, setUser] = useState(null);
   const [words, setWords] = useState([]);
   const [isAddVocabOpen, setIsAddVocabOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [isEditVocabOpen, setIsEditVocabOpen] = useState(false);
+  const [editingVocab, setEditingVocab] = useState(null);
 
   const fetchVocab = async () => {
     if (!user) return;
@@ -41,6 +44,10 @@ function Vocabulary() {
     }
 
     fetchVocab();
+  };
+  const handleEdit = (word) => {
+    setEditingVocab(word);
+    setIsEditVocabOpen(true);
   };
   useEffect(() => {
     const fetchUser = async () => {
@@ -236,7 +243,11 @@ function Vocabulary() {
             ))}
           </div>
           <div className="vocab-table-box">
-            <VocabularyTable words={filteredWords} onDelete={handleDelete} />
+            <VocabularyTable
+              words={filteredWords}
+              onDelete={handleDelete}
+              onEdit={handleEdit}
+            />
           </div>
         </div>
         {isAddVocabOpen && (
@@ -244,6 +255,18 @@ function Vocabulary() {
             isOpen={isAddVocabOpen}
             onClose={setIsAddVocabOpen}
             userId={user?.id}
+            onConfirm={fetchVocab}
+          />
+        )}
+        {isEditVocabOpen && (
+          <EditVocab
+            isOpen={isEditVocabOpen}
+            onClose={() => {
+              setIsEditVocabOpen(false);
+              setEditingVocab(null);
+            }}
+            userId={user?.id}
+            vocabWord={editingVocab}
             onConfirm={fetchVocab}
           />
         )}

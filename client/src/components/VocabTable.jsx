@@ -1,7 +1,10 @@
 import "./VocabTable.css";
 import bin from "../assets/bin.png";
-function VocabularyTable({ words, onDelete }) {
+import edit from "../assets/edit.png";
+
+function VocabularyTable({ words, onDelete, onEdit }) {
   return (
+    <div className="vocab-table-container">
       <table className="vocab-table">
         <thead>
           <tr>
@@ -21,8 +24,14 @@ function VocabularyTable({ words, onDelete }) {
               <td>{word.meaning}</td>
               <td>{word.category}</td>
               <td>{word.status}</td>
-              <td>
+              <td className="vocab-actions">
                  <img
+                className="vocab-edit"
+                src={edit}
+                alt="Edit"
+                onClick={() => onEdit(word)}
+              />
+              <img
                 className="vocab-bin"
                 src={bin}
                 alt="Delete"
@@ -33,6 +42,7 @@ function VocabularyTable({ words, onDelete }) {
           ))}
         </tbody>
       </table>
+    </div>
   );
 }
 

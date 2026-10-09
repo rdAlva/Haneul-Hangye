@@ -18,6 +18,22 @@
   color: #000000;
 }
 
+.vocab-table-container {
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: auto;
+  border-radius: 8px;
+  scrollbar-color: #5d5c5c #dbdada;
+  scrollbar-width: thin;
+  position: relative;
+}
+
+.vocab-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #C6DBF3;
+}
 .vocab-table td {
   padding: 12px 10px;
   text-align: left;
@@ -35,6 +51,21 @@
   display: block;
   margin: auto;
 }
+.vocab-edit {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+}
+
+.vocab-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+
 
 .vocab-table th:nth-child(1),
 .vocab-table td:nth-child(1) {
