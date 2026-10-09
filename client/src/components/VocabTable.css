@@ -1,13 +1,3 @@
-.vocab-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  table-layout: fixed;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid #2d3a4a;
-  border-radius: 8px;
-  overflow: hidden;
-}
 
 .vocab-table th {
   padding: 12px 10px;
@@ -19,21 +9,38 @@
 }
 
 .vocab-table-container {
-  max-height: 500px;
+  max-height: 400px;
   overflow-y: auto;
   overflow-x: auto;
+  position: relative;
   border-radius: 8px;
   scrollbar-color: #5d5c5c #dbdada;
   scrollbar-width: thin;
-  position: relative;
+  border: 1px solid #2d3a4a;
+  border-radius: 8px;
+}
+
+.vocab-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.vocab-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 20;
 }
 
 .vocab-table thead th {
   position: sticky;
   top: 0;
-  z-index: 10;
-  background-color: #C6DBF3;
+  z-index: 20;
+  background-color: #c8dcf3;
 }
+
 .vocab-table td {
   padding: 12px 10px;
   text-align: left;
