@@ -101,7 +101,7 @@ The app will run by default at `http://localhost:5173`.
 
 ## What I would do next
 
-- Connect the app to a production-ready Supabase project and confirm user data persists properly in a live environment
+- Quizzes and Flashcards. Develop quiz and flashcard features to help users review vocabulary and practice what they have learned.
 - Add more advanced analytics such as streak tracking, word mastery progress, and weekly goals
 - Improve accessibility, polish the visual design, and expand the learning features for deeper study habits
 
@@ -113,7 +113,7 @@ Rafael Allan D. Alvarado
 
 ![Built with AI assistance](https://img.shields.io/badge/built%20with-AI%20assistance-0b5fff)
 
-This project was developed with GitHub Copilot assistance to support planning, implementation, debugging, and documentation updates.
+This project was developed with GitHub Copilot, Claude, and GPT assistance to support planning, implementation, debugging, and documentation updates.
 
 ## License
 

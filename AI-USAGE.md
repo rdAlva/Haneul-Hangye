@@ -74,8 +74,7 @@ At least six entries. One per real use. Every entry needs a commit link.
 
 - Vocabulary.jsx
 - https://github.com/rdAlva/Haneul-Hangye/commit/f3200035f3f8035e9cba8e2f230fff2512ef4c9c
-- This is the Vocabulary page. It gets the logged-in user and loads that user's words from the vocabulary_words table in Supabase. It shows the Hangul consonants and vowels, the category boxes, and a table of the user's words. Clicking a category changes selectedCategory, and the table shows only the words in that category ("All" shows every word). The page can also delete a word and open the Add Word window. After a word is added or deleted, the list is loaded again, so the page always matches the database. The consonants, vowels and categories are stored as arrays and shown with map, so the page does not repeat the same code for each item.
-
+- This is the Vocabulary page. It gets the logged-in user and loads that user's words from the vocabulary_words table in Supabase. It shows the Hangul consonants and vowels, the category boxes, and the table of the user's words. The page can also delete a word and open the Add Word window. After a word is added or deleted, the list is loaded again, so the page always matches the database. The consonants, vowels and categories are stored as arrays and shown with map, so the page does not repeat the same code for each item. I did not write the category filter, the Edit Word part of this page, or the words table (VocabTable), which are listed below.
 - Vocabulary.css
 - https://github.com/rdAlva/Haneul-Hangye/commit/b6a384449d636d63fe461dcb66d3202b86303697
 - This file styles the Vocabulary page: the page padding, the header with the "Add Word" button, and the light blue box that holds everything. The consonant, vowel and category rows are flex rows with a gap between items. At 700px and 400px, the padding and text get smaller and the rows can wrap onto a new line, so the page fits on a phone.
