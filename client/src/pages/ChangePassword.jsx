@@ -56,12 +56,13 @@ const [loading, setLoading] = useState(false)
         <p className="korean-text">안녕하세요!</p>
 
         <p className="info-text">
-          Learn Korean. Track your progress.<br />
-          Stay consistent.<br /><br />
-          Organize your study sessions, build<br />
-          your vocabulary, practice with quizzes<br />
-          and flashcards, and keep your learning<br />
-          streak going all in one place.
+          Learn Korean. Track your progress.
+            <br />
+            Stay consistent.
+            <br />
+            <br />
+            Organize your study sessions, build your vocabulary and keep your learning streak going all in
+            one place.
         </p>
 
         <div className="language-icons">

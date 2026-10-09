@@ -64,13 +64,9 @@ function Register() {
             <br />
             Stay consistent.
             <br />
-            Organize your study sessions, build
             <br />
-            your vocabulary, practice with quizzes
-            <br />
-            and flashcards, and keep your learning
-            <br />
-            streak going all in one place.
+            Organize your study sessions, build your vocabulary and keep your learning streak going all in
+            one place.
           </p>
 
           <div className="language-icons">

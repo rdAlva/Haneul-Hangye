@@ -49,8 +49,7 @@ function Login() {
             Stay consistent.
             <br />
             <br />
-            Organize your study sessions, build your vocabulary, practice with
-            quizzes and flashcards, and keep your learning streak going all in
+            Organize your study sessions, build your vocabulary and keep your learning streak going all in
             one place.
           </p>
 
