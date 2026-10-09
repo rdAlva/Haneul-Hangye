@@ -2,7 +2,11 @@
 
 Haneul Hangye is a Korean language learning tracker designed to help students organize vocabulary, log study sessions, and review their learning progress in one place.
 
-Status: this project is currently running as a local React + Supabase app for user authentication and personal study data.
+Status: Live demo available at https://haneul-hangye.onrender.com/
+
+## Live demo
+
+- Deployed app: https://haneul-hangye.onrender.com/
 
 ## What it does
 
