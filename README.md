@@ -16,6 +16,17 @@ Status: Live demo available at https://haneul-hangye.onrender.com/
 - Review dashboard metrics such as words learned, total study hours, and recent sessions
 - Use a protected route flow so each user sees only their own data
 
+## Screenshots
+
+| | |
+| --- | --- |
+| ![Login page](client/src/assets/screenshots/login-page.png) | ![Register page](client/src/assets/screenshots/register.png) |
+| ![Forgot password page](client/src/assets/screenshots/forgot-pasword.png) | ![Reset password page](client/src/assets/screenshots/reset-password.png) |
+| ![Dashboard](client/src/assets/screenshots/dashboard.png) | ![Logout confirmation](client/src/assets/screenshots/logout-modal.png) |
+| ![Sessions page](client/src/assets/screenshots/session.png) | ![Log a session](client/src/assets/screenshots/session-add-modal.png) |
+| ![Edit a session](client/src/assets/screenshots/session-edit-modal.png) | ![Vocabulary page](client/src/assets/screenshots/vocabulary.png) |
+| ![Add a word](client/src/assets/screenshots/vocabulary-add-modal.png) | ![Edit a word](client/src/assets/screenshots/vocabulary-edit-modal.png) |
+
 ## Key features
 
 - Dashboard overview with learning statistics and recent session summaries
