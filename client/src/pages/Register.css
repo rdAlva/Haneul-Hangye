@@ -118,15 +118,24 @@
   text-align: center;
 }
 
-.error {
+.error,
+.success {
   margin: 0 0 12px;
   padding: 7px;
   background: #FFFFFF;
-  color: #000000;
   border-radius: 4px;
   font-size: 9px;
   text-align: center;
 }
+
+.error {
+  color: #000000;
+}
+
+.success {
+  color: #273F5A;
+}
+
 
 .register-form label {
   display: block;

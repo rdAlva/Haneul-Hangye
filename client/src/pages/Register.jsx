@@ -13,6 +13,7 @@ function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState(null);
 
   const handleRegister = async () => {
     setLoading(true);
@@ -24,19 +25,22 @@ function Register() {
       return;
     }
 
-    const { error } = await supabase.auth.signUp({
+    await supabase.auth.signOut();
+
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
-      options: {
-        data: { full_name: fullName },
-      },
+      options: { data: { full_name: fullName } },
     });
 
     if (error) {
       setError(error.message);
       setLoading(false);
-    } else {
+    } else if (data.session) {
       navigate("/dashboard");
+    } else {
+      setMessage("Check your email to confirm your account, then log in.");
+      setLoading(false);
     }
   };
 
@@ -65,8 +69,8 @@ function Register() {
             Stay consistent.
             <br />
             <br />
-            Organize your study sessions, build your vocabulary and keep your learning streak going all in
-            one place.
+            Organize your study sessions, build your vocabulary and keep your
+            learning streak going all in one place.
           </p>
 
           <div className="language-icons">
@@ -79,6 +83,7 @@ function Register() {
           <p>Start your Korean learning journey today</p>
 
           {error && <p className="error">{error}</p>}
+          {message && <p className="success">{message}</p>}
 
           <label>Full Name</label>
           <input

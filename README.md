@@ -109,6 +109,24 @@ The app will run by default at `http://localhost:5173`.
 - Add more advanced analytics such as streak tracking, word mastery progress, and weekly goals
 - Improve accessibility, polish the visual design, and expand the learning features for deeper study habits
 
+## Credits
+
+Icons from [Flaticon](https://www.flaticon.com):
+
+- User icon created by [Magnific](https://www.flaticon.com/free-icon/user_1144760) - Flaticon
+- Plus icon created by [kliwir art](https://www.flaticon.com/free-icon/plus_4315609) - Flaticon
+- Headphones icon created by [yoyonpujiono](https://www.flaticon.com/free-icon/headphones_15547405) - Flaticon
+- Word icon created by [Magnific](https://www.flaticon.com/free-icon/word_8541744) - Flaticon
+- Script icon created by [ekays.dsgn](https://www.flaticon.com/free-icon/script_12750387) - Flaticon
+- Speaking icon created by [Mayor Icons](https://www.flaticon.com/free-icon/speaking_9289733) - Flaticon
+- Bin icon created by [Magnific](https://www.flaticon.com/free-icon/bin_484662) - Flaticon
+- Reading book icon created by [Magnific](https://www.flaticon.com/free-icon/reading-book_3068380) - Flaticon
+- Edit icon created by [Kiranshastry](https://www.flaticon.com/free-icon/edit_1159633) - Flaticon
+- Korean icon created by [ekays.dsgn](https://www.flaticon.com/free-icon/korean_14797337) - Flaticon
+- Contract icon created by [Magnific](https://www.flaticon.com/free-icon/contract_684831) - Flaticon
+
+- Logo image: made by me
+
 ## Author
 
 Rafael Allan D. Alvarado
